@@ -1,0 +1,112 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: #263238;
+}
+
+section {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.creat_conteiner{
+    width: 80%;
+}
+
+.creat_input {
+    padding: 12px 20px;
+    font-size: 18px;
+    width: 80%;
+}
+
+.creat_button{
+    padding: 12px 20px;
+    background-color: rgb(115, 71, 156);
+    border: 1px solid rgba(198, 58, 233, 0.836);
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.creat_button:active{
+    border: 1px solid rgb(202, 18, 18);
+    box-shadow: 2px 2px 5px 3px rgb(255, 7, 7);
+}
+
+.todo_conteiner{
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.todo_item{
+    border: 1px solid salmon;
+    border-radius: 5px;
+    width: 24%;
+    padding: 10px 15px;
+    background-color: aquamarine;
+    margin-bottom: 20px;
+}
+
+.todo_item.done{
+    background-color: gold;
+    text-decoration: linen;
+    color: rgb(214, 105, 16);
+}
+
+.todo_item.done h4, .todo_item.done p, .todo_item.done span{
+    color: rgb(112, 11, 121);
+}
+
+.todo_item.mark{
+    background: linear-gradient(50deg,rgb(37, 71, 182) 10%,rgb(137, 59, 182)30%, rgb(252, 248, 14));
+    color: darkred;
+}
+
+.todo_item.mark h4, .todo_item.mark p, .todo_item.mark span{
+    color: black;
+    
+}
+
+.todo_item.market{
+    background: linear-gradient(120deg,hotpink,10%,rgb(226, 52, 197),rgb(213, 228, 3));
+}
+
+
+.todo_item.market h4, .todo_item.market p, .todo_item.market span{
+    color: rgb(72, 43, 173);
+}
+
+.todo_item_footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo_item_footer p{
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+.todo_item_footer.action_buttons{
+    display: flex;
+}
+
+.todo_item_footer img{
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    cursor: pointer;
+    border: 1px solid rgb(153, 148, 148);
+    background-color: white;
+}
