@@ -19,6 +19,16 @@ def add_todo(request):
     return  redirect(homepage)
 
 
+def delete_todo (request,id):
+    todo = TODO.objects.get(id=id)
+    todo.delete()
+    return redirect(homepage)
 
+
+def mark_todo(request,id):
+    todo = TODO.objects.get(id = id)
+    todo.is_favorite = True
+    todo.save()
+    return redirect(homepage)
 
 # Create your views here.
