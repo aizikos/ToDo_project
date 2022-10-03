@@ -1,12 +1,13 @@
 from django.shortcuts import render,HttpResponse
 
-#from .models import ToDo
+from .models import TODO
 
 def homepage (request):
-        return render (request,'index.html')
+    todo_list=TODO.objects.all()
+    return render (request,'index.html',{"todo_list": todo_list})
 
 def test (request):   
-    return render (request,'test.html',)
+    return render (request,'test.html')
 
 #def add_todo(request):
     #f = request.POST

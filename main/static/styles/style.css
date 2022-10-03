@@ -52,8 +52,8 @@ section {
     border: 1px solid salmon;
     border-radius: 5px;
     width: 24%;
+    background-color: blue;
     padding: 10px 15px;
-    background-color: aquamarine;
     margin-bottom: 20px;
 }
 

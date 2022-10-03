@@ -20,129 +20,25 @@
             <input type="text" class="creat_input" placeholder="New Work" >
             <button class="creat_button">ADD</button>
         </div>
-
+           
         <div class="todo_conteiner">
-            
+            {% for todo in todo_list %}
             <div class="todo_item">
                 <label class="checkbox_conteiner">
                     <input type="checkbox">
                     <span class="checkmark"></span>
                 </label>
-                <h4>Milk</h4>
+                <h4>{{ todo.text }}</h4>
                 <div class="todo_item_footer">
-                    <p>17.09.2022 <span>23:00</span></p>
+                    <p>{{ todo.date }}</p>
                     <div class="action_buttons">
-                        <img src="./ikons/сердечко.png" >    
-                        <img src="./ikons/ящик.png" >
+                        <img src="{% static 'ikons/сердечко.png' %}" >    
+                        <img src="{% static 'ikons/ящик.png' %}" >
                     </div>
                 </div>
             </div>
 
-            <div class="todo_item done">
-                <label class="checkbox_conteiner">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <h4>Work</h4>
-                <div class="todo_item_footer">
-                    <p>17.09.2022 <span>14:00</span></p>
-                    <div class="action_buttons">
-                        <img src="./ikons/сердечко.png">
-                        <img src="./ikons/ящик.png" >
-                    </div>
-                </div>
-            </div>
-
-            <div class="todo_item mark">
-                <label class="checkbox_conteiner">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <h4>Write</h4>
-                <div class="todo_item_footer">
-                    <p>17.09.2022 <span>19:00</span></p>
-                    <div class="action_buttons">
-                        <img src="./ikons/сердечко.png" >
-                        <img src="./ikons/ящик.png" >
-                    </div>
-                </div>
-            </div>
-
-            <div class="todo_item market">
-                <label class="checkbox_conteiner">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <h4>Dansing</h4>
-                <div class="todo_item_footer">
-                    <p>17.09.2022 <span>10:00</span></p>
-                    <div class="action_buttons">
-                        <img src="./ikons/сердечко.png" >
-                        <img src="./ikons/ящик.png" >
-                    </div>
-                </div>
-            </div>
-            
-            <div class="todo_item">
-                <label class="checkbox_conteiner">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <h4>Read</h4>
-                <div class="todo_item_footer">
-                    <p>17.09.2022 <span>15:00</span></p>
-                    <div class="action_buttons">
-                        <img src="./ikons/сердечко.png" >
-                        <img src="./ikons/ящик.png" >
-                    </div>
-                </div>
-            </div>   
-            
-            <div class="todo_item done">
-                <label class="checkbox_conteiner">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <h4>Run</h4>
-                <div class="todo_item_footer">
-                    <p>17.09.2022 <span>18:00</span></p>
-                    <div class="action_buttons">
-                        <img src="./ikons/сердечко.png" >
-                        <img src="./ikons/ящик.png" >
-                    </div>
-                </div>
-            </div>
-
-            <div class="todo_item mark">
-                <label class="checkbox_conteiner">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <h4>Cleaning</h4>
-                <div class="todo_item_footer">
-                    <p>17.09.2022 <span>22:00</span></p>
-                    <div class="action_buttons">
-                        <img src="./ikons/сердечко.png" >
-                        <img src="./ikons/ящик.png" >
-                    </div>
-                </div>
-            </div>
-
-            <div class="todo_item market">
-                <label class="checkbox_conteiner">
-                    <input type="checkbox">
-                    <span class="checkmark"></span>
-                </label>
-                <h4>Need sleep</h4>
-                <div class="todo_item_footer">
-                    <p>17.09.2022 <span>19:00</span></p>
-                    <div class="action_buttons">
-                        <img src="./ikons/сердечко.png" >
-                        <img src="./ikons/ящик.png" >
-                    </div>
-                </div>
-            </div>
-
+            {% endfor %}
 
         </div>
     </section>
