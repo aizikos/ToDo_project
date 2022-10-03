@@ -1,4 +1,4 @@
-from django.shortcuts import render,HttpResponse
+from django.shortcuts import render,HttpResponse,redirect
 
 from .models import TODO
 
@@ -9,17 +9,26 @@ def homepage (request):
 def test (request):   
     return render (request,'test.html')
 
-#def add_todo(request):
-    #f = request.POST
-   # text=f["todo_text"]
-    #todo = ToDo(
-    #    text=text
-    
-    #todo.save()
-
-    #return HttpResponse("FORMA")
-
+def add_todo(request):
+    f = request.POST
+    text = f["texts"]
+    todo = TODO(
+        text= text
+    )
+    todo.save()
+    return  redirect(homepage)
 
 
+def delete_todo (request,id):
+    todo = TODO.objects.get(id=id)
+    todo.delete()
+    return redirect(homepage)
+
+
+def mark_todo(request,id):
+    todo = TODO.objects.get(id = id)
+    todo.is_favorite = True
+    todo.save()
+    return redirect(homepage)
 
 # Create your views here.
