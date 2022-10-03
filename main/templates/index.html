@@ -4,7 +4,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" method="POST">
+   { % csrf_token %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!--<link rel="stylesheet" href="./styles/checkbox.css">-->
@@ -15,12 +16,13 @@
 <body>
     <section>
         <div class="creat_conteiner">
-            <input type="text" class="creat_input" placeholder="New Work">
+            
+            <input type="text" class="creat_input" placeholder="New Work" >
             <button class="creat_button">ADD</button>
-
         </div>
 
         <div class="todo_conteiner">
+            
             <div class="todo_item">
                 <label class="checkbox_conteiner">
                     <input type="checkbox">
