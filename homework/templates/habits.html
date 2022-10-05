@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <body>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" method="POST">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--<link rel="stylesheet" href="./styles/checkbox.css">-->
+    <link rel="stylesheet" href="{% static 'styles/habits.css' %}"/>
+    <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
+    
+</head>
+<body>
+    <section>
+        <div class="creat_conteiner">
+            <form action="{% url 'add-habits' %}" method="POST">
+                {% csrf_token %}
+                <input type="text" 
+                class="creat_input" 
+                placeholder="Ваша имя-фамилия"name="habits_text">
+                
+                    <input type="text" class="creat_input" 
+                    placeholder="Cделать сегодня" name="habits_day">
+
+                    <input type="text" class="creat_input" 
+                    placeholder="Важное" name="habits_hot">
+
+                    <input type="text" class="creat_input" 
+                    placeholder="Коментарий" name="habits_com">
+                    <button class="creat_button">Добавить</button>
+    
+            </form>
+        </div>
+
+        <div class="todo_conteiner">
+            {% for todo in todo_list %}
+            <div class="todo_item">
+                <label class="checkbox_conteiner">
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+                <h4>ИМЯ: {{ todo.name }}</h4>
+                <h5>Cделано сегодня: {{todo.done_for_today}}</h5>
+                <h5>Важно:{{todo.important}}</h5>
+                <p class="ju">КОМЕНТАРИЙ: {{todo.comment}}</p>
+
+                <div class="todo_item_footer">
+                    <div class="action_buttons">
+                        <img src="{% static 'icons/ящик.png' %}"/>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>

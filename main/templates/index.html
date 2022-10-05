@@ -5,12 +5,12 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" method="POST">
-   { % csrf_token %}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!--<link rel="stylesheet" href="./styles/checkbox.css">-->
     <link rel="stylesheet" href="{% static 'styles/style.css' %}"/>
     <link rel="stylesheet" href="{% static 'styles/checkbox.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/color.css' %}">-->
     
 </head>
 <body>
@@ -27,7 +27,11 @@
            
         <div class="todo_conteiner">
             {% for todo in todo_list %}
-            <div class="todo_item">
+            <div class="todo_item
+            {% if todo.is_favorite %}
+            done
+            {% endif %}">
+                
                 <label class="checkbox_conteiner">
                     <input type="checkbox">
                     <span class="checkmark"></span>
@@ -37,7 +41,11 @@
                     <p>{{ todo.date }}</p>
                     <div class="action_buttons">
                         <a href="{% url 'mark-todo' todo.id %}">
+                            {% if todo.is_favorite %}
                             <img src="{% static 'ikons/сердечко.png' %}" >
+                            {% else %}
+                            <img src="{% static 'ikons/heart.png' %}">
+                            {% endif %}
                         </a>    
                         <a href="{% url 'delete_todo' todo.id %}">
                            <img src="{% static 'ikons/ящик.png' %}" >
