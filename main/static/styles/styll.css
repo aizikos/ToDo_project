@@ -52,19 +52,20 @@ section {
     border: 1px solid salmon;
     border-radius: 5px;
     width: 24%;
-    background-color: blue;
+    background: rgb(46, 223, 247);
     padding: 10px 15px;
     margin-bottom: 20px;
 }
 
 .todo_item.done{
-    background-color: gold;
+    background: rgb(143, 142, 138);
     text-decoration: linen;
     color: rgb(214, 105, 16);
 }
 
 .todo_item.done h4, .todo_item.done p, .todo_item.done span{
-    color: rgb(112, 11, 121);
+    color: rgb(20, 20, 20);
+    text-decoration: line-through;
 }
 
 .todo_item.mark{
@@ -107,6 +108,4 @@ section {
     height: 25px;
     margin: 0 5px;
     cursor: pointer;
-    border: 1px solid rgb(153, 148, 148);
-    background-color: white;
 }
