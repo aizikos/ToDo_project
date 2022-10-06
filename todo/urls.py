@@ -33,7 +33,10 @@ urlpatterns = [
     path("meet/",meet,name="meet"),
     path("add-todos/",add_todos,name="add-todos"),
     path("add-habits/",add_habits,name="add-habits"),
-    path("close-todo/<id>/",close_todo,name="close-todo")
+    path("close-todo/<id>/",close_todo,name="close-todo"),
+    path("close-todos/<id>/",delete_to_meet,name="close-todos"),
+    path("mark-todos/<id>/", mark_to_meet,name="mark-todos"),
+    path("clos-todo/<id>/",closed_todo,name="clos-todo"),
     
     
 ]   + static(settings.STATIC_URL,document_root= settings.STATIC_ROOT) \
