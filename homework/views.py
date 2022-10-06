@@ -50,5 +50,25 @@ def add_habits(request):
     hab.save()
     return redirect(habits)
 
+def delete_to_meet (request,id):
+    todo = ToMeet.objects.get(id=id)
+    todo.delete()
+    return redirect(meet)
+
+def  mark_to_meet(request,id):
+    todo = ToMeet.objects.get(id = id)
+    todo.is_favorite = not todo.is_favorite
+    todo.save()
+    return redirect(meet)
+
+def closed_todo(request,id):
+     todo = ToMeet.objects.get(id=id)
+     todo.is_closed= not todo.is_closed
+     todo.save()
+     return redirect (meet)
+
+
+
+
 
 # Create your views here.
